@@ -45,10 +45,10 @@ def generate_chronological_links(generator):
     previous_article = None
     for article in generator.articles:
         if previous_article is not None:
-            previous_article.next_url = article.url
-            previous_article.next_title = article.title
-            article.previous_url = previous_article.url
-            article.previous_title = previous_article.title
+            previous_article.previous_url = article.url
+            previous_article.previous_title = article.title
+            article.next_url = previous_article.url
+            article.next_title = previous_article.title
         previous_article = article
 
 
